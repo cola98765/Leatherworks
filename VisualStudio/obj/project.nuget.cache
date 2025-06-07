@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "esb5gdtOdT4=",
+  "dgSpecHash": "0QqBa3Y0OJA=",
   "success": true,
   "projectFilePath": "C:\\Users\\tpodo\\source\\repos\\cola98765\\Leatherworks\\VisualStudio\\Leatherworks.csproj",
   "expectedPackageFiles": [
@@ -37,7 +37,7 @@
     "C:\\Users\\tpodo\\.nuget\\packages\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\tpodo\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\tpodo\\.nuget\\packages\\stblade.modding.tld.gearspawner\\2.3.1\\stblade.modding.tld.gearspawner.2.3.1.nupkg.sha512",
-    "C:\\Users\\tpodo\\.nuget\\packages\\stblade.modding.tld.il2cppassemblies.windows\\2.25.0\\stblade.modding.tld.il2cppassemblies.windows.2.25.0.nupkg.sha512",
+    "C:\\Users\\tpodo\\.nuget\\packages\\stblade.modding.tld.il2cppassemblies.windows\\2.42.0\\stblade.modding.tld.il2cppassemblies.windows.2.42.0.nupkg.sha512",
     "C:\\Users\\tpodo\\.nuget\\packages\\stblade.modding.tld.modsettings\\1.9.0\\stblade.modding.tld.modsettings.1.9.0.nupkg.sha512",
     "C:\\Users\\tpodo\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\tpodo\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
