@@ -225,7 +225,7 @@ namespace Leatherworks
             furName = thisGearItem.gameObject.name;        
         
             if (thisGearItem == null) return;
-            if (GameManager.GetInventoryComponent().GearInInventory(knife1, 1) || GameManager.GetInventoryComponent().GearInInventory(knife2, 1))
+            if (GameManager.GetInventoryComponent().GetBestGearItemWithName(knife1.name) || GameManager.GetInventoryComponent().GetBestGearItemWithName(knife2.name))
             {
                 GameAudioManager.PlayGuiConfirm();
                 InterfaceManager.GetPanel<Panel_GenericProgressBar>().Launch(Localization.Get("GAMEPLAY_LW_ScrapeProgressBar"), 5f, 0f, 0f,
@@ -241,8 +241,8 @@ namespace Leatherworks
         }
         private static void OnScrapeFurFinished(bool success, bool playerCancel, float progress)
         {
-            var knife1 = GameManager.GetInventoryComponent().GearInInventory(LeatherworksUtils.knife1, 1);
-            var knife2 = GameManager.GetInventoryComponent().GearInInventory(LeatherworksUtils.knife2, 1);
+            var knife1 = GameManager.GetInventoryComponent().GetBestGearItemWithName(LeatherworksUtils.knife1.name);
+            var knife2 = GameManager.GetInventoryComponent().GetBestGearItemWithName(LeatherworksUtils.knife2.name);
             //var knife3 = GameManager.GetInventoryComponent().GearInInventory(LeatherworksUtils.knifecamp1, 1);
             //var knife4 = GameManager.GetInventoryComponent().GearInInventory(LeatherworksUtils.knifecamp2, 1);
 
@@ -260,11 +260,11 @@ namespace Leatherworks
             {
                 GameManager.GetPlayerManagerComponent().InstantiateItemInPlayerInventory(LeatherworksUtils.leatherParts, wolfdeeryield);
 
-                if (GameManager.GetInventoryComponent().GearInInventory(knife1, 1))
+                if (GameManager.GetInventoryComponent().GetBestGearItemWithName(knife1.name))
                 {
                     knife1.m_CurrentHP = knife1.m_CurrentHP - 10;
                 }
-                else if (GameManager.GetInventoryComponent().GearInInventory(knife2, 1))
+                else if (GameManager.GetInventoryComponent().GetBestGearItemWithName(knife2.name))
                 {
                     knife2.m_CurrentHP = knife2.m_CurrentHP - 10;
                 }
@@ -281,11 +281,11 @@ namespace Leatherworks
             {
                 GameManager.GetPlayerManagerComponent().InstantiateItemInPlayerInventory(LeatherworksUtils.leatherParts, rabbityield);
                 
-                if (GameManager.GetInventoryComponent().GearInInventory(knife1, 1))
+                if (GameManager.GetInventoryComponent().GetBestGearItemWithName(knife1.name))
                 {
                     knife1.m_CurrentHP = knife1.m_CurrentHP - 5;
                 }
-                else if (GameManager.GetInventoryComponent().GearInInventory(knife1, 1))
+                else if (GameManager.GetInventoryComponent().GetBestGearItemWithName(knife2.name))
                 {
                     knife2.m_CurrentHP = knife2.m_CurrentHP - 5;
                 }
@@ -302,11 +302,11 @@ namespace Leatherworks
             {
                 GameManager.GetPlayerManagerComponent().InstantiateItemInPlayerInventory(LeatherworksUtils.leatherParts, moosebearyield);
 
-                if (GameManager.GetInventoryComponent().GearInInventory(knife1, 1))
+                if (GameManager.GetInventoryComponent().GetBestGearItemWithName(knife1.name))
                 {
                     knife1.m_CurrentHP = knife1.m_CurrentHP - 15;
                 }
-                else if (GameManager.GetInventoryComponent().GearInInventory(knife2, 1))
+                else if (GameManager.GetInventoryComponent().GetBestGearItemWithName(knife2.name))
                 {
                     knife2.m_CurrentHP = knife2.m_CurrentHP - 15;
                 }
@@ -417,7 +417,7 @@ namespace Leatherworks
             if (thisGearItem == null) return;
             if (Settings.instance.noGrind == true)
             {
-                if (GameManager.GetInventoryComponent().GearInInventory(LeatherworksUtils.hammer2, 1) || GameManager.GetInventoryComponent().GearInInventory(LeatherworksUtils.hammer1, 1))
+                if (GameManager.GetInventoryComponent().GetBestGearItemWithName(LeatherworksUtils.hammer2.name) || GameManager.GetInventoryComponent().GetBestGearItemWithName(LeatherworksUtils.hammer1.name))
                 {
                     if (thisGearItem.name == "GEAR_BarkPreparedFried")
                     {
@@ -458,7 +458,7 @@ namespace Leatherworks
             }
             else
             {
-                if (GameManager.GetInventoryComponent().GearInInventory(LeatherworksUtils.hammer1, 1))
+                if (GameManager.GetInventoryComponent().GetBestGearItemWithName(LeatherworksUtils.hammer1.name))
                 {
                     if (thisGearItem.name == "GEAR_BarkPreparedFried")
                     {
@@ -754,15 +754,15 @@ namespace Leatherworks
 
         private static void OnMakeRope()
         {
-            var knife1 = GameManager.GetInventoryComponent().GearInInventory(LeatherworksUtils.knife1, 1);
-            var knife2 = GameManager.GetInventoryComponent().GearInInventory(LeatherworksUtils.knife2, 1);
+            var knife1 = GameManager.GetInventoryComponent().GetBestGearItemWithName(LeatherworksUtils.knife1.name);
+            var knife2 = GameManager.GetInventoryComponent().GetBestGearItemWithName(LeatherworksUtils.knife2.name);
             //var knife3 = GameManager.GetInventoryComponent().GearInInventory(LeatherworksUtils.knifecamp1, 1);
             //var knife4 = GameManager.GetInventoryComponent().GearInInventory(LeatherworksUtils.knifecamp2, 1);
             var thisGearItem = LWFunctionalities.ropeItem;
             GearItem bark = GameManager.GetInventoryComponent().GetBestGearItemWithName("GEAR_BarkPrepared");
 
             if (thisGearItem == null) return;
-            if (GameManager.GetInventoryComponent().GearInInventory(knife1, 1) || GameManager.GetInventoryComponent().GearInInventory(knife2, 1))
+            if (GameManager.GetInventoryComponent().GetBestGearItemWithName(knife1.name) || GameManager.GetInventoryComponent().GetBestGearItemWithName(knife2.name))
             {
                 
                 
@@ -800,15 +800,15 @@ namespace Leatherworks
         }
         private static void OnMakeRopeFinished(bool success, bool playerCancel, float progress)
         {
-            var knife1 = GameManager.GetInventoryComponent().GearInInventory(LeatherworksUtils.knife1, 1);
-            var knife2 = GameManager.GetInventoryComponent().GearInInventory(LeatherworksUtils.knife2, 1);
+            var knife1 = GameManager.GetInventoryComponent().GetBestGearItemWithName(LeatherworksUtils.knife1.name);
+            var knife2 = GameManager.GetInventoryComponent().GetBestGearItemWithName(LeatherworksUtils.knife2.name);
             //var knife3 = GameManager.GetInventoryComponent().GearInInventory(LeatherworksUtils.knifecamp1, 1);
             //var knife4 = GameManager.GetInventoryComponent().GearInInventory(LeatherworksUtils.knifecamp2, 1);
-            if (GameManager.GetInventoryComponent().GearInInventory(knife1, 1))
+            if (GameManager.GetInventoryComponent().GetBestGearItemWithName(knife1.name))
             {
                 knife1.m_CurrentHP = knife1.m_CurrentHP - 3;
             }    
-            else if (GameManager.GetInventoryComponent().GearInInventory(knife2, 1))
+            else if (GameManager.GetInventoryComponent().GetBestGearItemWithName(knife2.name))
             {
                 knife2.m_CurrentHP = knife2.m_CurrentHP - 4;
             }
