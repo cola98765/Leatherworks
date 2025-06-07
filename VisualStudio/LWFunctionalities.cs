@@ -1,13 +1,11 @@
-﻿using System;
+﻿using Il2Cpp;
+using Il2CppNodeCanvas.Tasks.Actions;
+using Il2CppProCore.Decals;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Il2Cpp;
-using Il2CppAK.Wwise;
-using Il2CppHoloville.HOTween.Core.Easing;
-using Il2CppNodeCanvas.Tasks.Actions;
-using Il2CppProCore.Decals;
 using UnityEngine;
 using static Il2CppMono.Security.X509.X520;
 
@@ -230,7 +228,7 @@ namespace Leatherworks
                 GameAudioManager.PlayGuiConfirm();
                 InterfaceManager.GetPanel<Panel_GenericProgressBar>().Launch(Localization.Get("GAMEPLAY_LW_ScrapeProgressBar"), 5f, 0f, 0f,
                                 "PLAY_HARVESTINGLEATHER", null, false, true, new System.Action<bool, bool, float>(OnScrapeFurFinished));
-                thisGearItem.m_StackableItem.m_Units -= 1;
+                GameManager.GetInventoryComponent().RemoveGearFromInventory(furName, 1);
             }
             else
             {
@@ -346,7 +344,7 @@ namespace Leatherworks
                 GameAudioManager.PlayGuiConfirm();
                 InterfaceManager.GetPanel<Panel_GenericProgressBar>().Launch(Localization.Get("GAMEPLAY_LW_TanLeatherProgressBar"), 5f, 0f, 0f,
                                 "PLAY_PUTINPOTWATERACORNSSHELLED", null, false, true, new System.Action<bool, bool, float>(OnLeatherAddFinished));
-                leatherScraped.m_StackableItem.m_Units -= 5;
+                GameManager.GetInventoryComponent().RemoveGearFromInventory(leatherScraped.name, 5);
                 GearItem.Destroy(thisGearItem);
             }
             else
@@ -389,7 +387,7 @@ namespace Leatherworks
                 GameAudioManager.PlayGuiConfirm();
                 InterfaceManager.GetPanel<Panel_GenericProgressBar>().Launch(Localization.Get("GAMEPLAY_LW_AddTanningProgressBar"), 5f, 0f, 0f,
                                 "PLAY_PUTINPOTWATER", null, false, true, new System.Action<bool, bool, float>(OnTanningAddFinished));
-                tanningliquid.m_StackableItem.m_Units -= amountint;
+                GameManager.GetInventoryComponent().RemoveGearFromInventory(tanningliquid.name, amountint);
                 GearItem.Destroy(thisGearItem);
             }
             else
@@ -432,7 +430,7 @@ namespace Leatherworks
                         GameAudioManager.PlayGuiConfirm();
                         InterfaceManager.GetPanel<Panel_GenericProgressBar>().Launch(Localization.Get("GAMEPLAY_LW_CrushProgressBar"), 3f, 0f, 0f,
                                         "PLAY_CRAFTINGACORNSGRINDING", null, false, true, new System.Action<bool, bool, float>(OnCrushBarkFinished));
-                        fried1.m_StackableItem.m_Units -= amountint;
+                        GameManager.GetInventoryComponent().RemoveGearFromInventory(fried1.name, amountint);
                     }
                     else if (thisGearItem.name == "GEAR_BarkPreparedFriedPile")
                     {
@@ -447,7 +445,7 @@ namespace Leatherworks
                         GameAudioManager.PlayGuiConfirm();
                         InterfaceManager.GetPanel<Panel_GenericProgressBar>().Launch(Localization.Get("GAMEPLAY_LW_CrushProgressBar"), 3f, 0f, 0f,
                                         "PLAY_CRAFTINGACORNSGRINDING", null, false, true, new System.Action<bool, bool, float>(OnCrushBarkFinished));
-                        fried2.m_StackableItem.m_Units -= amountint / 5;
+                        GameManager.GetInventoryComponent().RemoveGearFromInventory(fried2.name, amountint / 5);
                     }
                 }
                 else
@@ -473,7 +471,7 @@ namespace Leatherworks
                         GameAudioManager.PlayGuiConfirm();
                         InterfaceManager.GetPanel<Panel_GenericProgressBar>().Launch(Localization.Get("GAMEPLAY_LW_CrushProgressBar"), 3f, 0f, 0f,
                                         "PLAY_CRAFTINGACORNSGRINDING", null, false, true, new System.Action<bool, bool, float>(OnCrushBarkFinished));
-                        fried1.m_StackableItem.m_Units -= amountint;
+                        GameManager.GetInventoryComponent().RemoveGearFromInventory(fried1.name, amountint);
                     }
                     else if (thisGearItem.name == "GEAR_BarkPreparedFriedPile")
                     {
@@ -488,7 +486,7 @@ namespace Leatherworks
                         GameAudioManager.PlayGuiConfirm();
                         InterfaceManager.GetPanel<Panel_GenericProgressBar>().Launch(Localization.Get("GAMEPLAY_LW_CrushProgressBar"), 3f, 0f, 0f,
                                         "PLAY_CRAFTINGACORNSGRINDING", null, false, true, new System.Action<bool, bool, float>(OnCrushBarkFinished));
-                        fried2.m_StackableItem.m_Units -= amountint / 5;
+                        GameManager.GetInventoryComponent().RemoveGearFromInventory(fried2.name, amountint / 5);
                     }
                 }
                 else
@@ -527,7 +525,7 @@ namespace Leatherworks
                 GameAudioManager.PlayGuiConfirm();
                 InterfaceManager.GetPanel<Panel_GenericProgressBar>().Launch(Localization.Get("GAMEPLAY_LW_PileProgressBar"), 1f, 0f, 0f,
                                 "PLAY_CRAFTINGACORNSSHELLING", null, false, true, new System.Action<bool, bool, float>(OnPileBarkFinished));
-                fried.m_StackableItem.m_Units -= 5;
+                GameManager.GetInventoryComponent().RemoveGearFromInventory(fried.name, 5);
             }
             else if (thisGearItem.name == "GEAR_BarkPrepared")
             {
@@ -542,7 +540,7 @@ namespace Leatherworks
                 GameAudioManager.PlayGuiConfirm();
                 InterfaceManager.GetPanel<Panel_GenericProgressBar>().Launch(Localization.Get("GAMEPLAY_LW_PileProgressBar"), 1f, 0f, 0f,
                                 "PLAY_CRAFTINGACORNSSHELLING", null, false, true, new System.Action<bool, bool, float>(OnPileBarkFinished));
-                notfried.m_StackableItem.m_Units -= 5;
+                GameManager.GetInventoryComponent().RemoveGearFromInventory(notfried.name, 5);
             }
             else if (thisGearItem.name == "GEAR_BirchbarkPrepared")
             {
@@ -557,7 +555,7 @@ namespace Leatherworks
                 GameAudioManager.PlayGuiConfirm();
                 InterfaceManager.GetPanel<Panel_GenericProgressBar>().Launch(Localization.Get("GAMEPLAY_LW_PileProgressBar"), 1f, 0f, 0f,
                                 "PLAY_CRAFTINGACORNSSHELLING", null, false, true, new System.Action<bool, bool, float>(OnPileBarkFinished));
-                birch.m_StackableItem.m_Units -= 5;
+                GameManager.GetInventoryComponent().RemoveGearFromInventory(birch.name, 5);
             }
             else if (thisGearItem.name == "GEAR_BirchbarkPreparedFried")
             {
@@ -572,7 +570,7 @@ namespace Leatherworks
                 GameAudioManager.PlayGuiConfirm();
                 InterfaceManager.GetPanel<Panel_GenericProgressBar>().Launch(Localization.Get("GAMEPLAY_LW_PileProgressBar"), 1f, 0f, 0f,
                                 "PLAY_CRAFTINGACORNSSHELLING", null, false, true, new System.Action<bool, bool, float>(OnPileBarkFinished));
-                birchfried.m_StackableItem.m_Units -= 5;
+                GameManager.GetInventoryComponent().RemoveGearFromInventory(birchfried.name, 5);
             }
             else
             {
@@ -628,7 +626,7 @@ namespace Leatherworks
                 GameAudioManager.PlayGuiConfirm();
                 InterfaceManager.GetPanel<Panel_GenericProgressBar>().Launch(Localization.Get("GAMEPLAY_LW_UnPileProgressBar"), 1f, 0f, 0f,
                                 "PLAY_CRAFTINGACORNSSHELLING", null, false, true, new System.Action<bool, bool, float>(OnUnPileBarkFinished));
-                fried.m_StackableItem.m_Units -= 1;
+                GameManager.GetInventoryComponent().RemoveGearFromInventory(fried.name, 1);
             }
             else if (thisGearItem.name == "GEAR_BarkPreparedPile")
             {
@@ -644,7 +642,7 @@ namespace Leatherworks
                 GameAudioManager.PlayGuiConfirm();
                 InterfaceManager.GetPanel<Panel_GenericProgressBar>().Launch(Localization.Get("GAMEPLAY_LW_UnPileProgressBar"), 1f, 0f, 0f,
                                 "PLAY_CRAFTINGACORNSSHELLING", null, false, true, new System.Action<bool, bool, float>(OnUnPileBarkFinished));
-                notfried.m_StackableItem.m_Units -= 1;
+                GameManager.GetInventoryComponent().RemoveGearFromInventory(notfried.name, 1);
             }
             else if (thisGearItem.name == "GEAR_BirchBarkPreparedPile")
             {
@@ -660,7 +658,7 @@ namespace Leatherworks
                 GameAudioManager.PlayGuiConfirm();
                 InterfaceManager.GetPanel<Panel_GenericProgressBar>().Launch(Localization.Get("GAMEPLAY_LW_UnPileProgressBar"), 1f, 0f, 0f,
                                 "PLAY_CRAFTINGACORNSSHELLING", null, false, true, new System.Action<bool, bool, float>(OnUnPileBarkFinished));
-                birch.m_StackableItem.m_Units -= 1;
+                GameManager.GetInventoryComponent().RemoveGearFromInventory(birch.name, 1);
             }
             else if (thisGearItem.name == "GEAR_BirchBarkPreparedFriedPile")
             {
@@ -676,7 +674,7 @@ namespace Leatherworks
                 GameAudioManager.PlayGuiConfirm();
                 InterfaceManager.GetPanel<Panel_GenericProgressBar>().Launch(Localization.Get("GAMEPLAY_LW_UnPileProgressBar"), 1f, 0f, 0f,
                                 "PLAY_CRAFTINGACORNSSHELLING", null, false, true, new System.Action<bool, bool, float>(OnUnPileBarkFinished));
-                birchfried.m_StackableItem.m_Units -= 1;
+                GameManager.GetInventoryComponent().RemoveGearFromInventory(birchfried.name, 1);
             }
             else
             {
@@ -719,7 +717,7 @@ namespace Leatherworks
             if (thisGearItem.name == "GEAR_BirchbarkPrepared")
             {
                 GameAudioManager.PlayGuiConfirm();
-                birch.m_StackableItem.m_Units -= 1;
+                GameManager.GetInventoryComponent().RemoveGearFromInventory(birch.name, 1);
                 GameManager.GetPlayerManagerComponent().InstantiateItemInPlayerInventory(LeatherworksUtils.birchFry, 1);
             }
         }
@@ -737,7 +735,7 @@ namespace Leatherworks
             if (thisGearItem.name == "GEAR_BirchBarkPreparedFryable")
             {
                 GameAudioManager.PlayGuiConfirm();
-                birchFry.m_StackableItem.m_Units -= 1;
+                GameManager.GetInventoryComponent().RemoveGearFromInventory(birchFry.name, 1);
                 GameManager.GetPlayerManagerComponent().InstantiateItemInPlayerInventory(LeatherworksUtils.birchClassic, 1);
 
             }
@@ -783,7 +781,7 @@ namespace Leatherworks
                     GameAudioManager.PlayGuiConfirm();
                     InterfaceManager.GetPanel<Panel_GenericProgressBar>().Launch(Localization.Get("GAMEPLAY_LW_MakeRopeProgressBar"), 2f, 3f, 0f,
                                     "PLAY_HARVESTINGLEATHER", null, false, true, new System.Action<bool, bool, float>(OnMakeRopeFinished));
-                    bark.m_StackableItem.m_Units -= 4;
+                    GameManager.GetInventoryComponent().RemoveGearFromInventory(bark.name, 4);
                 }
                 else
                 {
@@ -848,7 +846,7 @@ namespace Leatherworks
                 GameAudioManager.PlayGuiConfirm();
                 InterfaceManager.GetPanel<Panel_GenericProgressBar>().Launch(Localization.Get("GAMEPLAY_LW_MakeStringProgressBar"), 2f, 0f, 0f,
                                 "PLAY_HARVESTINGLEATHER", null, false, true, new System.Action<bool, bool, float>(OnMakeStringFinished));
-                rope.m_StackableItem.m_Units -= 3;
+                GameManager.GetInventoryComponent().RemoveGearFromInventory(rope.name, 3);
             }
             else
             {

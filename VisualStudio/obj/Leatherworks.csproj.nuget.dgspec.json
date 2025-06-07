@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tpodo\\source\\repos\\cola98765\\Leatherworks\\VisualStudio\\Leatherworks.csproj": {}
+    "C:\\Users\\tonis\\Desktop\\TLDMod\\LeatherScrapeButton\\VisualStudio\\Leatherworks.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tpodo\\source\\repos\\cola98765\\Leatherworks\\VisualStudio\\Leatherworks.csproj": {
+    "C:\\Users\\tonis\\Desktop\\TLDMod\\LeatherScrapeButton\\VisualStudio\\Leatherworks.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tpodo\\source\\repos\\cola98765\\Leatherworks\\VisualStudio\\Leatherworks.csproj",
+        "projectUniqueName": "C:\\Users\\tonis\\Desktop\\TLDMod\\LeatherScrapeButton\\VisualStudio\\Leatherworks.csproj",
         "projectName": "Leatherworks",
-        "projectPath": "C:\\Users\\tpodo\\source\\repos\\cola98765\\Leatherworks\\VisualStudio\\Leatherworks.csproj",
-        "packagesPath": "C:\\Users\\tpodo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tpodo\\source\\repos\\cola98765\\Leatherworks\\VisualStudio\\obj\\",
+        "projectPath": "C:\\Users\\tonis\\Desktop\\TLDMod\\LeatherScrapeButton\\VisualStudio\\Leatherworks.csproj",
+        "packagesPath": "C:\\Users\\tonis\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tonis\\Desktop\\TLDMod\\LeatherScrapeButton\\VisualStudio\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\tpodo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\tonis\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -38,13 +34,7 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net6.0": {
@@ -74,26 +64,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.36, 6.0.36]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.36, 6.0.36]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.36, 6.0.36]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
